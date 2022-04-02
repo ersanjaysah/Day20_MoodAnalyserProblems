@@ -8,17 +8,17 @@ namespace MoodAnalyserTest
     {
 
         [TestMethod]
-        public void Given_Null_Mood_Should_Throw_MoodAnalysisException()
+        public void Given_Empty_Mood_Should_Throw_MoodAnalyseException_Indicating_EmptyMood()
         {
             try
             {
-                string message = null;
-                 MoodAnalyser moodAnalyser = new MoodAnalyser(message);
-                string mood = moodAnalyser.AnalizeMood();
+                string message = " ";
+                MoodAnalyser moodAnaliser = new MoodAnalyser(message);
+                string mood = moodAnaliser.AnalizeMood();
             }
-            catch (MoodAnalyserCustomException ex)
+            catch (MoodAnalyserCustomException e)
             {
-                Assert.AreEqual("Mood should not be null", ex.Message);
+                Assert.AreEqual("Mood should not be Empty", e.Message);
             }
         }
     }
