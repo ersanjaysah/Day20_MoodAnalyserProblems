@@ -11,7 +11,7 @@ namespace MoodAnalyserTest
         {
             //Arrange
             string expected = "SAD";
-            string message = "I am in HAPPY Mood";
+            string message = "I am in SAD Mood";
             MoodAnalyser mood = new MoodAnalyser(message);
 
             // Act
